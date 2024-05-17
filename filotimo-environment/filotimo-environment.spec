@@ -8,6 +8,7 @@ BuildArch:      noarch
 License:        GPLv2+
 
 %description
+Environment variables and sysctl configuration for Filotimo
 
 %define debug_package %{nil}
 
