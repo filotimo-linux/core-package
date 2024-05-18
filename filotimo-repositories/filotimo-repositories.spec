@@ -1,6 +1,6 @@
 Name:           filotimo-repositories
 Version:        1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Provides RPMFusion and sentry/kernel-fsync
 BuildArch:      noarch
 License:        MIT
