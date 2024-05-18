@@ -1,6 +1,6 @@
 Name:           filotimo-repositories
 Version:        1.0
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Provides RPMFusion and sentry/kernel-fsync
 BuildArch:      noarch
 License:        MIT
@@ -16,11 +16,18 @@ Requires:       fedora-repos
 
 # Replaces stripped down RPMFusion repositories that are included by default
 Obsoletes:      fedora-workstation-repositories
+Provides:       fedora-workstation-repositories
 
 # This is the tool that allows you to enable third party repositories
 # - we don't want this, we simply want them to be enabled regardless
 Obsoletes:      fedora-third-party
 Provides:       fedora-third-party
+
+# So tainted repos and rawhide can be installed
+Obsoletes:      rpmfusion-nonfree-release
+Provides:       rpmfusion-nonfree-release
+Obsoletes:      rpmfusion-free-release
+Provides:       rpmfusion-free-release
 
 %description
 Repositories to allow the installation of software not packaged with Fedora.
@@ -37,6 +44,7 @@ cp -rv etc/* %{buildroot}%{_sysconfdir}
 if [ $1 -gt 1 ] ; then
     dnf update -y @core
     # This needs to be enabled rather than shipped because .repo for it is provided by fedora-repos
+    # RPMFusion requires this
     dnf config-manager --enable -y fedora-cisco-openh264
 fi
 
