@@ -1,6 +1,6 @@
 Name:           filotimo-kde-overrides
 Version:        1.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        KDE defaults for Filotimo
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
 Source0:        %URL/releases/download/latest/filotimo-kde-overrides.tar.gz
@@ -10,6 +10,7 @@ License:        GPLv2+
 Requires:       rsms-inter-fonts
 Requires:       ibm-plex-fonts-all
 Obsoletes:      plasma-discover-offline-updates
+Provides:       plasma-discover-offline-updates
 
 %description
 KDE defaults for Filotimo
