@@ -3,7 +3,7 @@ Version:        1.0
 Release:        1%{?dist}
 Summary:        KDE defaults for Filotimo
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
-Source0:        %URL/releases/download/1.0/filotimo-kde-overrides.tar.gz
+Source0:        %URL/releases/download/latest/filotimo-kde-overrides.tar.gz
 BuildArch:      noarch
 License:        GPLv2+
 

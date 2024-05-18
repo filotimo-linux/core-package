@@ -3,7 +3,7 @@ Version:        1.0
 Release:        1%{?dist}
 Summary:        Environment variables and sysctl configuration for Filotimo
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
-Source0:        %URL/releases/download/1.0/filotimo-environment.tar.gz
+Source0:        %URL/releases/download/latest/filotimo-environment.tar.gz
 BuildArch:      noarch
 License:        GPLv2+
 
