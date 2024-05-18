@@ -1,6 +1,6 @@
 Name:           filotimo-repositories
 Version:        1.0
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Provides RPMFusion and sentry/kernel-fsync
 BuildArch:      noarch
 License:        MIT
@@ -42,8 +42,6 @@ cp -rv etc/* %{buildroot}%{_sysconfdir}
 
 %post
 if [ $1 -eq 1 ] ; then
-    # Install AppStream for repos
-    dnf update --refresh -y @core
     # This needs to be enabled rather than shipped because .repo for it is provided by fedora-repos
     # RPMFusion requires this
     dnf config-manager --enable -y fedora-cisco-openh264
