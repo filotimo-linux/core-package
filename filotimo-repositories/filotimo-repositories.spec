@@ -41,7 +41,7 @@ mkdir -p %{buildroot}%{_sysconfdir}/
 cp -rv etc/* %{buildroot}%{_sysconfdir}
 
 %post
-if [ $1 -gt 1 ] ; then
+if [ $1 -eq 1 ] ; then
     # Install AppStream for repos
     dnf update --refresh -y @core
     # This needs to be enabled rather than shipped because .repo for it is provided by fedora-repos
