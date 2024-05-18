@@ -1,6 +1,6 @@
 Name:           filotimo-repositories
 Version:        1.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Provides RPMFusion and sentry/kernel-fsync
 BuildArch:      noarch
 License:        MIT
@@ -23,7 +23,7 @@ Provides:       fedora-workstation-repositories
 Obsoletes:      fedora-third-party
 Provides:       fedora-third-party
 
-# So tainted repos and rawhide can be installed
+# So tainted repos and rawhide can be installed w/o package conflicts
 Obsoletes:      rpmfusion-nonfree-release
 Provides:       rpmfusion-nonfree-release
 Obsoletes:      rpmfusion-free-release
@@ -46,6 +46,9 @@ if [ $1 -gt 1 ] ; then
     # This needs to be enabled rather than shipped because .repo for it is provided by fedora-repos
     # RPMFusion requires this
     dnf config-manager --enable -y fedora-cisco-openh264
+    # Import gpg key for sentry/fsync kernel, needed or else Discover will silently fail on update
+    # Running RPM from within RPM is probably a terrible idea
+    rpm --import 'https://download.copr.fedorainfracloud.org/results/sentry/kernel-fsync/pubkey.gpg'
 fi
 
 %files
