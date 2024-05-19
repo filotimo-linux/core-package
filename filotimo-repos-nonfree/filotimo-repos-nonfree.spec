@@ -1,11 +1,11 @@
 Name:           filotimo-repos-nonfree
 Version:        40
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Provides RPMFusion nonfree
 BuildArch:      noarch
 License:        MIT
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
-Source0:        %URL/releases/download/latest/filotimo-repositories.tar.gz
+Source0:        %URL/releases/download/latest/filotimo-repos-nonfree.tar.gz
 
 # For rpmfusion-nonfree repo keys
 # rpmfusion-free/nonfree-release is never being installed, so repo files take GPG keys from here
