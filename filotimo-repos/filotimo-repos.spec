@@ -11,13 +11,15 @@ URL:            https://github.com/filotimo-linux/
 # Obsolete fedora repos
 Provides:       fedora-repos(%{version}) = %{release}
 Requires:       system-release(%{version})
+Provides:       filotimo-repositories
 Obsoletes:      filotimo-repositories
 Obsoletes:      fedora-repos
 Obsoletes:      fedora-repos-modular < 39-0.3
 %if %{rawhide_release} == %{version}
 Requires:       filotimo-repos-rawhide = %{version}-%{release}
 %endif
-Requires:       fedora-gpg-keys >= %{version}-%{release}
+Requires:       fedora-gpg-keys
+# Requires: fedora-gpg-keys >= %{version}-%{release}
 
 # For rpmfusion gpg keys
 Requires:       distribution-gpg-keys
