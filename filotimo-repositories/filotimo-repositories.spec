@@ -1,6 +1,6 @@
 Name:           filotimo-repositories
 Version:        1.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Provides RPMFusion and sentry/kernel-fsync
 BuildArch:      noarch
 License:        MIT
@@ -37,7 +37,7 @@ Enables RPMFusion and sentry/kernel-fsync, installing a patched kernel.
 %setup -T -b 0 -q -n filotimo-repositories
 
 %pre
-rm -f %{_sysconfdir}/yum.repos.d/_copr:copr.fedorainfracloud.org:tduck973564:filotimo-packages.repo
+rm -f %{_sysconfdir}/yum.repos.d/_copr:copr.fedorainfracloud.org:tduck973564:filotimo-packages.repo || true # prevent fail
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/
