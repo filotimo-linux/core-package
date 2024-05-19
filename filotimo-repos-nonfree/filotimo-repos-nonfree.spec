@@ -33,7 +33,7 @@ Obsoletes:      filotimo-repositories
 Repositories enabling the installation of nonfree software, through RPMFusion nonfree.
 
 %prep
-%setup -T -b 0 -q -n filotimo-repositories
+%setup -T -b 0 -q -n filotimo-repos-nonfree
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/
