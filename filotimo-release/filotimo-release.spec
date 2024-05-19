@@ -108,7 +108,7 @@ Summary: Filotimo release files
 Requires:   filotimo-release-variant = %{version}-%{release}
 Suggests:   filotimo-release
 
-Requires:   filotimo-repos(%{version})
+Requires:   fedora-repos(%{version})
 Requires:   filotimo-release-identity = %{version}-%{release}
 Provides:	filotimo-release-common = %{version}-%{release}
 Obsoletes:	fedora-release-common
@@ -161,7 +161,7 @@ Provides:       system-release
 Provides:       system-release(%{version})
 Requires:       filotimo-release-common = %{version}-%{release}
 Provides:       system-release-product
-Requires:       filotimo-repos-eln
+Requires:       fedora-repos-eln
 
 Obsoletes:      redhat-release
 Provides:       redhat-release
