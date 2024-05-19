@@ -44,7 +44,8 @@ Version:        40
 # The numbering is 0.<r> before a given Fedora Linux release is released,
 # with r starting at 1, and then just <r>, with r starting again at 1.
 # Use '%%autorelease -p' before final, and then drop the '-p'.
-Release:        %autorelease
+#Release:        %autorelease
+Release:        2%{?dist}
 License:        MIT
 URL:            https://github.com/filotimo-linux
 
@@ -107,7 +108,7 @@ Summary: Filotimo release files
 Requires:   filotimo-release-variant = %{version}-%{release}
 Suggests:   filotimo-release
 
-Requires:   fedora-repos(%{version})
+Requires:   filotimo-repos(%{version})
 Requires:   filotimo-repositories
 Requires:   filotimo-environment
 Requires:   filotimo-release-identity = %{version}-%{release}
@@ -162,7 +163,7 @@ Provides:       system-release
 Provides:       system-release(%{version})
 Requires:       filotimo-release-common = %{version}-%{release}
 Provides:       system-release-product
-Requires:       fedora-repos-eln
+Requires:       filotimo-repos-eln
 
 Obsoletes:      redhat-release
 Provides:       redhat-release

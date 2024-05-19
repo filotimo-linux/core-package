@@ -1,7 +1,7 @@
-Name:           filotimo-repositories
-Version:        1.1
-Release:        2%{?dist}
-Summary:        Provides RPMFusion and sentry/kernel-fsync
+Name:           filotimo-repos-nonfree
+Version:        40
+Release:        1%{?dist}
+Summary:        Provides RPMFusion nonfree
 BuildArch:      noarch
 License:        MIT
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
@@ -12,7 +12,7 @@ Source0:        %URL/releases/download/latest/filotimo-repositories.tar.gz
 Requires:       distribution-gpg-keys
 
 # For /etc/yum.repos.d
-Requires:       fedora-repos
+Requires:       filotimo-repos
 
 # Replaces stripped down RPMFusion repositories that are included by default
 Obsoletes:      fedora-workstation-repositories
@@ -26,32 +26,21 @@ Provides:       fedora-third-party
 # So tainted repos and rawhide can be installed w/o package conflicts
 Obsoletes:      rpmfusion-nonfree-release
 Provides:       rpmfusion-nonfree-release
-Obsoletes:      rpmfusion-free-release
-Provides:       rpmfusion-free-release
+
+Obsoletes:      filotimo-repositories
 
 %description
-Repositories to allow the installation of software not packaged with Fedora.
-Enables RPMFusion and sentry/kernel-fsync, installing a patched kernel.
+Repositories enabling the installation of nonfree software, through RPMFusion nonfree.
 
 %prep
 %setup -T -b 0 -q -n filotimo-repositories
-
-%pre
-rm -f %{_sysconfdir}/yum.repos.d/_copr:copr.fedorainfracloud.org:tduck973564:filotimo-packages.repo || true # prevent fail
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/
 cp -rv etc/* %{buildroot}%{_sysconfdir}
 
-%post
-if [ $1 -eq 1 ] ; then
-    # This needs to be enabled rather than shipped because .repo for it is provided by fedora-repos
-    # RPMFusion requires this
-    dnf config-manager --enable -y fedora-cisco-openh264
-fi
-
 %files
 %license LICENSE
-%{_sysconfdir}/yum.repos.d/*
+%config(noreplace) %{_sysconfdir}/yum.repos.d/*
 
 %changelog
