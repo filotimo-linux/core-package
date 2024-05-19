@@ -4,7 +4,7 @@
 Summary:        Filotimo package repositories
 Name:           filotimo-repos
 Version:        40
-Release:        1%{?eln:.eln%{eln}}
+Release:        2%{?eln:.eln%{eln}}
 License:        MIT
 URL:            https://github.com/filotimo-linux/
 
@@ -388,8 +388,10 @@ rm -f "$TMPRING"
 %files
 %dir /etc/yum.repos.d
 %config(noreplace) /etc/yum.repos.d/fedora.repo
+%config(noreplace) /etc/yum.repos.d/fedora-testing.repo
 %config(noreplace) /etc/yum.repos.d/fedora-cisco-openh264.repo
 %config(noreplace) /etc/yum.repos.d/fedora-updates.repo
+%config(noreplace) /etc/yum.repos.d/fedora-updates-testing.repo
 %config(noreplace) /etc/yum.repos.d/rpmfusion-free.repo
 %config(noreplace) /etc/yum.repos.d/rpmfusion-free-updates.repo
 %config(noreplace) /etc/yum.repos.d/rpmfusion-free-updates-testing.repo
