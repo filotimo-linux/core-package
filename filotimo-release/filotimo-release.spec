@@ -109,7 +109,6 @@ Requires:   filotimo-release-variant = %{version}-%{release}
 Suggests:   filotimo-release
 
 Requires:   filotimo-repos(%{version})
-Requires:   filotimo-repositories
 Requires:   filotimo-environment
 Requires:   filotimo-release-identity = %{version}-%{release}
 Provides:	filotimo-release-common = %{version}-%{release}
