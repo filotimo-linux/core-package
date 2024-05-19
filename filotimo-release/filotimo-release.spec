@@ -280,9 +280,6 @@ Provides:       system-release
 Provides:       system-release(%{version})
 Requires:       filotimo-release-common = %{version}-%{release}
 
-# This is where Filotimo-specific defaults for KDE are
-Requires:       filotimo-kde-overrides
-
 # fedora-release-common Requires: fedora-release-identity, so at least one
 # package must provide it. This Recommends: pulls in
 # fedora-release-identity-kde if nothing else is already doing so.
