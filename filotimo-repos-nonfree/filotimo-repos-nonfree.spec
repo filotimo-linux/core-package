@@ -1,6 +1,6 @@
 Name:           filotimo-repos-nonfree
 Version:        40
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Provides RPMFusion nonfree
 BuildArch:      noarch
 License:        MIT
@@ -17,11 +17,6 @@ Requires:       filotimo-repos
 # Replaces stripped down RPMFusion repositories that are included by default
 Obsoletes:      fedora-workstation-repositories
 Provides:       fedora-workstation-repositories
-
-# This is the tool that allows you to enable third party repositories
-# - we don't want this, we simply want them to be enabled regardless
-Obsoletes:      fedora-third-party
-Provides:       fedora-third-party
 
 # So tainted repos and rawhide can be installed w/o package conflicts
 Obsoletes:      rpmfusion-nonfree-release
