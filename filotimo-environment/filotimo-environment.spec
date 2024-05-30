@@ -26,6 +26,6 @@ cp -rv var/* %{buildroot}%{_sharedstatedir}
 %license LICENSE
 %{_sysconfdir}/profile.d/*
 %{_sysconfdir}/sysctl.d/*
-%{_sharedstatedir}/flatpak/overrides/global
+%{_sharedstatedir}/flatpak/overrides/*
 
 %changelog
