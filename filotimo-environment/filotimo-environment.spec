@@ -18,7 +18,7 @@ Environment variables and sysctl configuration for Filotimo.
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/
-mkdir -p %{buildroot}%{_sharedstatedir}/flatpak/overrides/
+mkdir -p %{buildroot}%{_sharedstatedir}/
 cp -rv etc/* %{buildroot}%{_sysconfdir}
 cp -rv var/lib/* %{buildroot}%{_sharedstatedir}
 
