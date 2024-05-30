@@ -45,7 +45,7 @@ Version:        40
 # with r starting at 1, and then just <r>, with r starting again at 1.
 # Use '%%autorelease -p' before final, and then drop the '-p'.
 #Release:        %autorelease
-Release:        4%{?dist}
+Release:        5%{?dist}
 License:        MIT
 URL:            https://github.com/filotimo-linux
 
@@ -322,8 +322,8 @@ echo "cpe:/o:fedoraproject:fedora:%{version}" > %{buildroot}%{_prefix}/lib/syste
 install -d %{buildroot}%{_sysconfdir}
 ln -s ../usr/lib/filotimo-release %{buildroot}%{_sysconfdir}/filotimo-release
 ln -s ../usr/lib/system-release-cpe %{buildroot}%{_sysconfdir}/system-release-cpe
-ln -s fedora-release %{buildroot}%{_sysconfdir}/redhat-release
-ln -s fedora-release %{buildroot}%{_sysconfdir}/system-release
+ln -s filotimo-release %{buildroot}%{_sysconfdir}/redhat-release
+ln -s filotimo-release %{buildroot}%{_sysconfdir}/system-release
 
 # Create the common os-release file
 %{lua:
