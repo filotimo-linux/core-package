@@ -4,7 +4,7 @@
 Summary:        Filotimo package repositories
 Name:           filotimo-repos
 Version:        40
-Release:        2%{?eln:.eln%{eln}}
+Release:        3%{?eln:.eln%{eln}}
 License:        MIT
 URL:            https://github.com/filotimo-linux/
 
@@ -116,6 +116,9 @@ Source503:      fedora-39-ima.cert
 Source504:      fedora-39-ima.der
 Source505:      fedora-39-ima.pem
 
+# Needed for copr to work correctly
+Source700:      copr.vendor.conf
+
 %description
 Filotimo package repository files for yum and dnf along with gpg public keys.
 
@@ -169,6 +172,11 @@ in a production environment.
 %build
 
 %install
+# Fix copr on filotimo
+install -d -m 755 $RPM_BUILD_ROOT%{_datadir}/dnf/plugins
+sed -i "s/^releasever=RELEASE_VER$/releasever=${version}/" %{_sourcedir}/copr.vendor.conf || exit 1
+install -m 644 %{_sourcedir}/copr.vendor.conf $RPM_BUILD_ROOT%{_datadir}/dnf/plugins/
+
 # Install the keys
 install -d -m 755 $RPM_BUILD_ROOT/etc/pki/rpm-gpg
 install -m 644 %{_sourcedir}/RPM-GPG-KEY* $RPM_BUILD_ROOT/etc/pki/rpm-gpg/
@@ -273,6 +281,12 @@ install -m 644 %{_sourcedir}/fedora-compose.conf $RPM_BUILD_ROOT/etc/ostree/remo
 
 
 %check
+# Make sure releasever is substituted with actual release version of fedora for copr
+if grep -q RELEASE_VER $RPM_BUILD_ROOT%{_datadir}/dnf/plugins/copr.vendor.conf; then
+    echo "ERROR: copr.vendor.conf contains an unsubstituted placeholder value"
+    exit 1
+fi
+
 # Make sure all repo variables were substituted
 for repo in $RPM_BUILD_ROOT/etc/yum.repos.d/*.repo; do
     if grep -q AUTO_VALUE $repo; then
@@ -396,6 +410,7 @@ rm -f "$TMPRING"
 %config(noreplace) /etc/yum.repos.d/rpmfusion-free-updates-testing.repo
 %config(noreplace) /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:tduck973564:filotimo-packages.repo
 %config(noreplace) /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:sentry:kernel-fsync.repo
+%config(noreplace) %{_datadir}/dnf/plugins/copr.vendor.conf
 
 %files archive
 %config(noreplace) /etc/yum.repos.d/fedora-updates-archive.repo
