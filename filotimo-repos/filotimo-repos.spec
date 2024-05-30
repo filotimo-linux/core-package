@@ -174,8 +174,8 @@ in a production environment.
 %install
 # Fix copr on filotimo
 install -d -m 755 $RPM_BUILD_ROOT%{_datadir}/dnf/plugins
-sed -i "s/^releasever=RELEASE_VER$/releasever=${version}/" %{_sourcedir}/copr.vendor.conf || exit 1
 install -m 644 %{_sourcedir}/copr.vendor.conf $RPM_BUILD_ROOT%{_datadir}/dnf/plugins/
+sed -i "s/^releasever=RELEASE_VER$/releasever=${version}/" $RPM_BUILD_ROOT%{_datadir}/copr.vendor.conf || exit 1
 
 # Install the keys
 install -d -m 755 $RPM_BUILD_ROOT/etc/pki/rpm-gpg
