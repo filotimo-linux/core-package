@@ -1,6 +1,6 @@
 Name:           filotimo-kde-overrides
 Version:        1.1
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        KDE defaults for Filotimo
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
 Source0:        %URL/releases/download/latest/filotimo-kde-overrides.tar.gz
@@ -23,6 +23,7 @@ KDE defaults for Filotimo
 
 %install
 mkdir -p %{buildroot}%{_sysconfdir}/
+mkdir -p %{buildroot}%{_datadir}/
 cp -rv etc/* %{buildroot}%{_sysconfdir}
 cp -rv usr/share/* %{buildroot}%{_datadir}
 
