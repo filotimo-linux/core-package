@@ -32,5 +32,6 @@ cp -rv usr/share/* %{buildroot}%{_datadir}
 %{_sysconfdir}/xdg/*
 %{_sysconfdir}/sddm.conf.d/*
 %{_datadir}/share/applications/org.filotimo.atychia.desktop
+%{_datadir}/share/kglobalaccel/org.filotimo.atychia.desktop
 
 %changelog
