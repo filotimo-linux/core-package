@@ -1,5 +1,5 @@
 Name:           filotimo-environment
-Version:        1.1
+Version:        1.2
 Release:        1%{?dist}
 Summary:        Environment variables and sysctl configuration for Filotimo
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
@@ -26,6 +26,7 @@ cp -rv var/lib/* %{buildroot}%{_sharedstatedir}
 %license LICENSE
 %{_sysconfdir}/profile.d/*
 %{_sysconfdir}/sysctl.d/*
+%{_sysconfdir}/fonts/conf.d/*
 %{_sharedstatedir}/flatpak/overrides/*
 
 %changelog
