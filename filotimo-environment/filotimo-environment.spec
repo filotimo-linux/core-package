@@ -1,12 +1,13 @@
 Name:           filotimo-environment
 Version:        1.3
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Environment configuration for Filotimo.
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
 Source0:        %URL/releases/download/latest/filotimo-environment.tar.gz
 BuildArch:      noarch
 License:        GPLv2+
 Requires:       flatpak
+Requires:       filotimo-environment-fonts
 
 %description
 Environment variables, sysctl and fontconfig configuration for Filotimo.
