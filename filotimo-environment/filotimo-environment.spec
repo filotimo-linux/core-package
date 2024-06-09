@@ -1,12 +1,17 @@
 Name:           filotimo-environment
 Version:        1.2
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Environment variables and sysctl configuration for Filotimo
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
 Source0:        %URL/releases/download/latest/filotimo-environment.tar.gz
 BuildArch:      noarch
 License:        GPLv2+
 Requires:       flatpak
+
+# Fonts to install as part of the environment
+Requires:       rsms-inter-fonts
+Requires:       rsms-inter-vf-fonts
+Requires:       ibm-plex-fonts-all
 
 %description
 Environment variables and sysctl configuration for Filotimo.
