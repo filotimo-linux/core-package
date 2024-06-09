@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Pass specfile location here
+
+rpmbuild -bb $1 --define "_tmppath $PWD" --define "_topdir $PWD" --define "_sourcedir $PWD" --define "_rpmdir $PWD" --undefine=_disable_source_fetch

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Pass generated folder with architecture name here
+
+rm -rf rpm-tmp*
+rm -rf BUILD SRPMS BUILDROOT $1

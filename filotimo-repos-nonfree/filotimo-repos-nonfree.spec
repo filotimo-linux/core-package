@@ -5,7 +5,10 @@ Summary:        Provides RPMFusion nonfree
 BuildArch:      noarch
 License:        MIT
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
-Source0:        %URL/releases/download/latest/filotimo-repos-nonfree.tar.gz
+Source0:        LICENSE
+Source1:        rpmfusion-nonfree.repo
+Source2:        rpmfusion-nonfree-updates.repo
+Source3:        rpmfusion-nonfree-updates-testing.repo
 
 # For rpmfusion-nonfree repo keys
 # rpmfusion-free/nonfree-release is never being installed, so repo files take GPG keys from here
@@ -25,17 +28,23 @@ Provides:       rpmfusion-nonfree-release
 Obsoletes:      filotimo-repositories
 
 %description
-Repositories enabling the installation of nonfree software, through RPMFusion nonfree.
+Repositories enabling the installation of nonfree software, through RPMFusion
+
+%define debug_package %{nil}
 
 %prep
-%setup -T -b 0 -q -n filotimo-repos-nonfree
 
 %install
-mkdir -p %{buildroot}%{_sysconfdir}/
-cp -rv etc/* %{buildroot}%{_sysconfdir}
+install -pm 0644 %{SOURCE0} LICENSE
+
+mkdir -p %{buildroot}%{_sysconfdir}/yum.repos.d
+
+install -t %{buildroot}%{_sysconfdir}/yum.repos.d/ %{SOURCE1} %{SOURCE2} %{SOURCE3}
 
 %files
 %license LICENSE
-%config(noreplace) %{_sysconfdir}/yum.repos.d/*
+%config(noreplace) %{_sysconfdir}/yum.repos.d/rpmfusion-nonfree.repo
+%config(noreplace) %{_sysconfdir}/yum.repos.d/rpmfusion-nonfree-updates.repo
+%config(noreplace) %{_sysconfdir}/yum.repos.d/rpmfusion-nonfree-updates-testing.repo
 
 %changelog

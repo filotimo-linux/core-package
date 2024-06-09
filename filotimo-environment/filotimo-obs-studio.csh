@@ -1,0 +1,2 @@
+setenv OBS_VKCAPTURE 1
+setenv OBS_VKCAPTURE_QUOET 1

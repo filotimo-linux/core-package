@@ -1,0 +1,1 @@
+setenv QT_SCALE_FACTOR_ROUNDING_POLICY "RoundPreferFloor"

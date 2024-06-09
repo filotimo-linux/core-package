@@ -3,7 +3,25 @@ Version:        1.3
 Release:        2%{?dist}
 Summary:        Environment configuration for Filotimo.
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
-Source0:        %URL/releases/download/latest/filotimo-environment.tar.gz
+
+Source0:        LICENSE
+# profile.d scripts
+Source1:        filotimo-electron.csh
+Source2:        filotimo-electron.sh
+Source3:        filotimo-environment.spec
+Source4:        filotimo-kde-qml-font-fix.csh
+Source5:        filotimo-kde-qml-font-fix.sh
+Source6:        filotimo-nvidia.csh
+Source7:        filotimo-nvidia.sh
+Source8:        filotimo-obs-studio.csh
+Source9:        filotimo-obs-studio.sh
+# sysctl.d
+Source11:       10-filotimo.conf
+# fonts/conf.d
+Source21:       00-filotimo-default-font.conf
+# /var/lib/flatpak/overrides
+Source31:       global
+
 BuildArch:      noarch
 License:        GPLv2+
 Requires:       flatpak
@@ -346,21 +364,32 @@ The extra font set that comes with Filotimo.
 Includes a complete set of Noto fonts to avoid tofu in all situations.
 
 %prep
-%setup -T -b 0 -q -n filotimo-environment
 
 %install
-mkdir -p %{buildroot}%{_sysconfdir}/
-mkdir -p %{buildroot}%{_sharedstatedir}/
-cp -rv etc/* %{buildroot}%{_sysconfdir}
-cp -rv var/lib/* %{buildroot}%{_sharedstatedir}
+install -pm 0644 %{SOURCE0} LICENSE
+mkdir -p %{buildroot}%{_sysconfdir}/profile.d/
+mkdir -p %{buildroot}%{_sysconfdir}/sysctl.d/
+mkdir -p %{buildroot}%{_sysconfdir}/fonts/conf.d/
+mkdir -p %{buildroot}%{_sharedstatedir}/flatpak/overrides/
+install -t %{buildroot}%{_sysconfdir}/profile.d/ %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} %{SOURCE7} %{SOURCE8} %{SOURCE9}
+install -t %{buildroot}%{_sysconfdir}/sysctl.d/ %{SOURCE11}
+install -t %{buildroot}%{_sysconfdir}/fonts/conf.d/ %{SOURCE21}
+install -t %{buildroot}%{_sharedstatedir}/flatpak/overrides/ %{SOURCE31}
 
 %files
 %license LICENSE
-%{_sysconfdir}/profile.d/*
-%{_sysconfdir}/sysctl.d/*
-%{_sharedstatedir}/flatpak/overrides/*
+%config(noreplace) %{_sysconfdir}/profile.d/filotimo-electron.csh
+%config(noreplace) %{_sysconfdir}/profile.d/filotimo-electron.sh
+%config(noreplace) %{_sysconfdir}/profile.d/filotimo-kde-qml-font-fix.csh
+%config(noreplace) %{_sysconfdir}/profile.d/filotimo-kde-qml-font-fix.sh
+%config(noreplace) %{_sysconfdir}/profile.d/filotimo-nvidia.csh
+%config(noreplace) %{_sysconfdir}/profile.d/filotimo-nvidia.sh
+%config(noreplace) %{_sysconfdir}/profile.d/filotimo-obs-studio.csh
+%config(noreplace) %{_sysconfdir}/profile.d/filotimo-obs-studio.sh
+%config(noreplace) %{_sysconfdir}/sysctl.d/10-filotimo.conf
+%config(noreplace) %{_sharedstatedir}/flatpak/overrides/global
 
 %files fonts
-%{_sysconfdir}/fonts/conf.d/*
+%config(noreplace) %{_sysconfdir}/fonts/conf.d/00-filotimo-default-font.conf
 
 %changelog
