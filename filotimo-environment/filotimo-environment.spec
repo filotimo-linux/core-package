@@ -8,13 +8,12 @@ Source0:        LICENSE
 # profile.d scripts
 Source1:        filotimo-electron.csh
 Source2:        filotimo-electron.sh
-Source3:        filotimo-environment.spec
-Source4:        filotimo-kde-qml-font-fix.csh
-Source5:        filotimo-kde-qml-font-fix.sh
-Source6:        filotimo-nvidia.csh
-Source7:        filotimo-nvidia.sh
-Source8:        filotimo-obs-studio.csh
-Source9:        filotimo-obs-studio.sh
+Source3:        filotimo-kde-qml-font-fix.csh
+Source4:        filotimo-kde-qml-font-fix.sh
+Source5:        filotimo-nvidia.csh
+Source6:        filotimo-nvidia.sh
+Source7:        filotimo-obs-studio.csh
+Source8:        filotimo-obs-studio.sh
 # sysctl.d
 Source11:       10-filotimo.conf
 # fonts/conf.d
@@ -371,7 +370,7 @@ mkdir -p %{buildroot}%{_sysconfdir}/profile.d/
 mkdir -p %{buildroot}%{_sysconfdir}/sysctl.d/
 mkdir -p %{buildroot}%{_sysconfdir}/fonts/conf.d/
 mkdir -p %{buildroot}%{_sharedstatedir}/flatpak/overrides/
-install -t %{buildroot}%{_sysconfdir}/profile.d/ %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} %{SOURCE7} %{SOURCE8} %{SOURCE9}
+install -t %{buildroot}%{_sysconfdir}/profile.d/ %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} %{SOURCE7} %{SOURCE8}
 install -t %{buildroot}%{_sysconfdir}/sysctl.d/ %{SOURCE11}
 install -t %{buildroot}%{_sysconfdir}/fonts/conf.d/ %{SOURCE21}
 install -t %{buildroot}%{_sharedstatedir}/flatpak/overrides/ %{SOURCE31}
