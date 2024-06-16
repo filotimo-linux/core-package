@@ -1,6 +1,6 @@
 Name:           filotimo-environment
-Version:        1.3
-Release:        2%{?dist}
+Version:        1.4
+Release:        1%{?dist}
 Summary:        Environment configuration for Filotimo.
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
 
@@ -40,6 +40,7 @@ Requires: ibm-plex-fonts-all
 Requires: adobe-source-code-pro-fonts
 
 # Maybe a bit extra but there will never ever be tofu
+Requires: adobe-source-han-code-jp-fonts
 Requires: google-noto-color-emoji-fonts
 Requires: google-noto-emoji-fonts
 Requires: google-noto-fonts-common
