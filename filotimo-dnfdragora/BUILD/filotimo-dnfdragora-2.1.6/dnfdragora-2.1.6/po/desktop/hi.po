@@ -1,0 +1,61 @@
+# Translators:
+# Panwar108 <caspian7pena@gmail.com>, 2019
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: dnfdragora desktop files translation\n"
+"Report-Msgid-Bugs-To: i18n-discuss@ml.mageia.org\n"
+"POT-Creation-Date: 2019-06-26 17:11+0300\n"
+"PO-Revision-Date: 2018-01-03 12:59+0000\n"
+"Last-Translator: Panwar108 <caspian7pena@gmail.com>, 2019\n"
+"Language-Team: Hindi (https://www.transifex.com/MageiaLinux/teams/9361/hi/)\n"
+"Language: hi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ./share/applications/org.mageia.dnfdragora.desktop
+msgctxt "Name"
+msgid "dnfdragora"
+msgstr "dnfdragora"
+
+#: ./share/applications/org.mageia.dnfdragora.desktop
+msgctxt "GenericName"
+msgid "Install & Remove Software"
+msgstr "सॉफ्टवेयर इंस्टॉल करें व हटाएँ"
+
+#: ./share/applications/org.mageia.dnfdragora.desktop
+msgctxt "Comment"
+msgid "A graphical front end for installing, removing and updating packages"
+msgstr "पैकेज इंस्टॉल करने, हटाने व अपडेट करने हेतु एक चित्रात्मक माध्यम"
+
+#: ./share/applications/org.mageia.dnfdragora-updater.desktop
+msgctxt "Name"
+msgid "dnfdragora-updater"
+msgstr "dnfdragora-अपडेट साधन"
+
+#: ./share/applications/org.mageia.dnfdragora-updater.desktop
+msgctxt "GenericName"
+msgid "Tray-icon to check for updates"
+msgstr "अपडेट खोजने हेतु ट्रे-आइकन"
+
+#: ./share/applications/org.mageia.dnfdragora-updater.desktop
+msgctxt "Comment"
+msgid "Automatically check for updates and notify"
+msgstr "स्वतः ही अपडेट खोजकर सूचित करें"
+
+#: ./share/applications/org.mageia.dnfdragora-localinstall.desktop
+msgctxt "Name"
+msgid "dnfdragora Package Installer"
+msgstr "dnfdragora पैकेज इंस्टॉलर"
+
+#: ./share/applications/org.mageia.dnfdragora-localinstall.desktop
+msgctxt "GenericName"
+msgid "RPM Package Installer"
+msgstr "RPM पैकेज इंस्टॉलर"
+
+#: ./share/applications/org.mageia.dnfdragora-localinstall.desktop
+msgctxt "Comment"
+msgid "Install local packages on the system"
+msgstr "सिस्टम पर लोकल पैकेज इंस्टॉल करें"
