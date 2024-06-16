@@ -1,6 +1,6 @@
 Name:           filotimo-environment
 Version:        1.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Environment configuration for Filotimo.
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
 
