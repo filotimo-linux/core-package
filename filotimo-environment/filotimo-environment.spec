@@ -378,16 +378,12 @@ install -t %{buildroot}%{_sharedstatedir}/flatpak/overrides/ %{SOURCE31}
 
 %files
 %license LICENSE
-%config(noreplace) %{_sysconfdir}/profile.d/filotimo-electron.csh
-%config(noreplace) %{_sysconfdir}/profile.d/filotimo-electron.sh
-%config(noreplace) %{_sysconfdir}/profile.d/filotimo-kde-qml-font-fix.csh
-%config(noreplace) %{_sysconfdir}/profile.d/filotimo-kde-qml-font-fix.sh
-%config(noreplace) %{_sysconfdir}/profile.d/filotimo-nvidia.csh
-%config(noreplace) %{_sysconfdir}/profile.d/filotimo-nvidia.sh
-%config(noreplace) %{_sysconfdir}/profile.d/filotimo-obs-studio.csh
-%config(noreplace) %{_sysconfdir}/profile.d/filotimo-obs-studio.sh
-%config(noreplace) %{_sysconfdir}/sysctl.d/10-filotimo.conf
-%config(noreplace) %{_sharedstatedir}/flatpak/overrides/global
+%{_sysconfdir}/profile.d/filotimo-electron.sh
+%{_sysconfdir}/profile.d/filotimo-kde-qml-font-fix.sh
+%{_sysconfdir}/profile.d/filotimo-nvidia.sh
+%{_sysconfdir}/profile.d/filotimo-obs-studio.sh
+%{_sysconfdir}/sysctl.d/10-filotimo.conf
+%{_sharedstatedir}/flatpak/overrides/global
 
 %files fonts
 %config(noreplace) %{_sysconfdir}/fonts/conf.d/00-filotimo-default-font.conf
