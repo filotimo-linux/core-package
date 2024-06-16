@@ -3,7 +3,7 @@
 
 Name:		filotimo-dnfdragora
 Version:	2.1.6
-Release:	2%{?dist}
+Release:	3%{?dist}
 Summary:	DNF package-manager based on libYui abstraction
 
 License:	GPLv3+

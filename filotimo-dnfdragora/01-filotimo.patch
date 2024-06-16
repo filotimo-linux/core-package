@@ -932,13 +932,15 @@ unchanged:
 - <update_contact>ngompa_at_mageia.org</update_contact>
 -</component>
 -
-only in patch2:
-unchanged:
---- a/dnfdragora/ui.py
+diff -u b/dnfdragora/ui.py b/dnfdragora/ui.py
+--- b/dnfdragora/ui.py
 +++ b/dnfdragora/ui.py
-@@ -386,8 +386,8 @@ class mainGui(dnfdragora.basedragora.BaseDragora):
+@@ -384,10 +384,10 @@
          '''
-         yui.YUI.app().setApplicationTitle(_("Software Management - dnfdragora"))
+             setup main dialog
+         '''
+-        yui.YUI.app().setApplicationTitle(_("Software Management - dnfdragora"))
++        yui.YUI.app().setApplicationTitle(_("Software Management - Install & Remove Software"))
  
 -        self.icon = self.images_path + "dnfdragora.png"
 -        self.logo = self.images_path + "dnfdragora-logo.png"
