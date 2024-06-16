@@ -1,0 +1,60 @@
+#!/usr/bin/env python3
+# vim: set fileencoding=utf-8 :
+# vim: set et ts=4 sw=4:
+#    Copyright 2017 Björn Esser <besser82@fedoraproject.org>
+#
+#    dnfdragora is a graphical package management tool based on libyui
+#    python bindings
+#
+#    dnfdragora is an external manatools module
+#
+#    License: GPLv3
+#
+
+import os, sys
+import gettext
+
+if __name__ == "__main__":
+    # We need to call this as early as possible because
+    # command-line help strings are translated
+    gettext.install('dnfdragora', localedir='/usr/share/locale', names=('ngettext',))
+    import argparse
+    parser = argparse.ArgumentParser(prog='dnfdragora-updater', usage=_('%(prog)s [options]'))
+    # Application arguments
+    parser.add_argument('--icon-path', nargs='?', help=_('force a new path for all the needed icons (instead of /usr/share/icons/hicolor/128x128/apps/)'))
+    parser.add_argument('--locales-dir', nargs='?', help=_('directory containing localization strings (developer only)'))
+    args = parser.parse_args()
+
+    # Change localedir if "--locales-dir" option is specified
+    if args.locales_dir:
+        gettext.install('dnfdragora', localedir=args.locales_dir, names=('ngettext',))
+
+    import logging
+    logger = logging.getLogger('dnfdragora.updater')
+
+    import dnfdaemon.client
+    import dnfdragora.updater
+    options = {}
+    if args.icon_path:
+        options['icon-path'] = args.icon_path
+
+    try:
+        upd = dnfdragora.updater.Updater(options)
+        upd.main()
+    except dnfdaemon.client.DaemonError as e:
+      logger.error("dnfdaemon client error: %s ", str(e))
+    except NameError as e:
+      logger.error("dnfdaemon NameError: %s ", str(e))
+    except AttributeError as e:
+      logger.error("dnfdaemon AttributeError: %s ", str(e))
+    except Exception as e:
+      logger.error("Unexpected error: %s ", str(e))
+    except:
+      logger.error("Unexpected error: %s ", str(sys.exc_info()[0]))
+    finally:
+        import yui
+        yui.YDialog.deleteAllDialogs()
+        # next line seems to be a workaround to prevent the qt-app from crashing
+        # see https://github.com/libyui/libyui-qt/issues/41
+        yui.YUILoader.deleteUI()
+        print("Closing dnfdragora-updater")
