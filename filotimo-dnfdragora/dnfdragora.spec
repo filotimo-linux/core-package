@@ -3,14 +3,13 @@
 
 Name:		filotimo-dnfdragora
 Version:	2.1.6
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	DNF package-manager based on libYui abstraction
 
 License:	GPLv3+
 URL:		https://github.com/manatools/dnfdragora
 Source0:	%{url}/archive/%{version}/dnfdragora-%{version}.tar.gz
 Patch0:     01-filotimo.patch
-Patch1:     02-change-icon.patch
 
 BuildArch:	noarch
 

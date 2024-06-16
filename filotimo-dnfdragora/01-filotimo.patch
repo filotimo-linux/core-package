@@ -1,24 +1,4 @@
-From d72e45c1334fc3c6c7c2904edbe24d17ff558ef7 Mon Sep 17 00:00:00 2001
-From: Thomas Duckworth <tduck973564@gmail.com>
-Date: Sun, 16 Jun 2024 19:07:04 +1000
-Subject: [PATCH] Filotimo patchset
-
----
- CMakeLists.txt                                |  17 -
- dnfdragora/updater.py                         | 413 ------------------
- po/CMakeLists.txt                             |  16 +-
- ...org.mageia.dnfdragora-localinstall.desktop | 130 ------
- .../org.mageia.dnfdragora-updater.desktop     | 122 ------
- .../org.mageia.dnfdragora.desktop             | 158 +++----
- .../org.mageia.dnfdragora.appdata.xml         |  28 --
- 7 files changed, 67 insertions(+), 817 deletions(-)
- delete mode 100644 dnfdragora/updater.py
- delete mode 100644 share/applications/org.mageia.dnfdragora-localinstall.desktop
- delete mode 100644 share/applications/org.mageia.dnfdragora-updater.desktop
- delete mode 100644 share/metainfo/org.mageia.dnfdragora.appdata.xml
-
-diff --git a/CMakeLists.txt b/CMakeLists.txt
-index 19d8236..ead16f0 100644
+unchanged:
 --- a/CMakeLists.txt
 +++ b/CMakeLists.txt
 @@ -86,28 +86,11 @@ endif(NOT SPHINX_EXECUTABLE STREQUAL "SPHINX_EXECUTABLE-NOTFOUND")
@@ -50,9 +30,7 @@ index 19d8236..ead16f0 100644
 -install(FILES ${CMAKE_SOURCE_DIR}/share/images/128x128/dnfdragora-logo.png DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/128x128/apps RENAME dnfdragora.png)
 -install(FILES ${CMAKE_SOURCE_DIR}/share/images/256x256/dnfdragora-logo.png DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/256x256/apps RENAME dnfdragora.png)
  install(DIRECTORY ${CMAKE_SOURCE_DIR}/share/images DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/dnfdragora)
-diff --git a/dnfdragora/updater.py b/dnfdragora/updater.py
-deleted file mode 100644
-index 6da5d85..0000000
+unchanged:
 --- a/dnfdragora/updater.py
 +++ /dev/null
 @@ -1,413 +0,0 @@
@@ -469,8 +447,7 @@ index 6da5d85..0000000
 -
 -    def main(self):
 -        self.__main_loop()
-diff --git a/po/CMakeLists.txt b/po/CMakeLists.txt
-index 732e72e..190526d 100644
+unchanged:
 --- a/po/CMakeLists.txt
 +++ b/po/CMakeLists.txt
 @@ -2,15 +2,15 @@
@@ -497,9 +474,7 @@ index 732e72e..190526d 100644
  
  # Generate and install each translation in a separate target
  foreach(PO_FILE ${PO_FILES})
-diff --git a/share/applications/org.mageia.dnfdragora-localinstall.desktop b/share/applications/org.mageia.dnfdragora-localinstall.desktop
-deleted file mode 100644
-index 72ff995..0000000
+unchanged:
 --- a/share/applications/org.mageia.dnfdragora-localinstall.desktop
 +++ /dev/null
 @@ -1,130 +0,0 @@
@@ -633,9 +608,7 @@ index 72ff995..0000000
 -MimeType=application/x-rpm;application/x-redhat-package-manager;
 -
 -
-diff --git a/share/applications/org.mageia.dnfdragora-updater.desktop b/share/applications/org.mageia.dnfdragora-updater.desktop
-deleted file mode 100644
-index 109b9e7..0000000
+unchanged:
 --- a/share/applications/org.mageia.dnfdragora-updater.desktop
 +++ /dev/null
 @@ -1,122 +0,0 @@
@@ -761,8 +734,7 @@ index 109b9e7..0000000
 -Type=Application
 -Categories=System;Settings;PackageManager;
 -StartupNotify=false
-diff --git a/share/applications/org.mageia.dnfdragora.desktop b/share/applications/org.mageia.dnfdragora.desktop
-index 74b7389..9ece842 100644
+unchanged:
 --- a/share/applications/org.mageia.dnfdragora.desktop
 +++ b/share/applications/org.mageia.dnfdragora.desktop
 @@ -1,103 +1,63 @@
@@ -928,9 +900,7 @@ index 74b7389..9ece842 100644
  Exec=dnfdragora
  Comment=A graphical front end for installing, removing and updating packages
  Comment[af]=’n Grafiese program vir die installasie, verwydering en bywerking van pakkette
-diff --git a/share/metainfo/org.mageia.dnfdragora.appdata.xml b/share/metainfo/org.mageia.dnfdragora.appdata.xml
-deleted file mode 100644
-index 4ba28c5..0000000
+unchanged:
 --- a/share/metainfo/org.mageia.dnfdragora.appdata.xml
 +++ /dev/null
 @@ -1,28 +0,0 @@
@@ -962,6 +932,18 @@ index 4ba28c5..0000000
 - <update_contact>ngompa_at_mageia.org</update_contact>
 -</component>
 -
--- 
-2.45.2
-
+only in patch2:
+unchanged:
+--- a/dnfdragora/ui.py
++++ b/dnfdragora/ui.py
+@@ -386,8 +386,8 @@ class mainGui(dnfdragora.basedragora.BaseDragora):
+         '''
+         yui.YUI.app().setApplicationTitle(_("Software Management - dnfdragora"))
+ 
+-        self.icon = self.images_path + "dnfdragora.png"
+-        self.logo = self.images_path + "dnfdragora-logo.png"
++        self.icon = "muon"
++        self.logo = "muon"
+         yui.YUI.app().setApplicationIcon(self.icon)
+ 
+         MGAPlugin = "mga"
