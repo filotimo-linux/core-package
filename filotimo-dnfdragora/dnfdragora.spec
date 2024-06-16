@@ -45,6 +45,7 @@ Provides:	dnfdragora-gui		= %{version}-%{release}
 Recommends:	(libyui-mga-qt if qt5-qtbase-gui)
 Recommends:	(libyui-mga-gtk if gtk3)
 
+Provides:       dnfdragora
 Conflicts:	dnfdragora
 
 %description
