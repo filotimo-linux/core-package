@@ -10,6 +10,7 @@ License:	GPLv3+
 URL:		https://github.com/manatools/dnfdragora
 Source0:	%{url}/archive/%{version}/dnfdragora-%{version}.tar.gz
 Patch0:     01-filotimo.patch
+Patch1:     02-change-icon.patch
 
 BuildArch:	noarch
 
