@@ -40,6 +40,7 @@ Requires: ibm-plex-fonts-all
 Requires: adobe-source-code-pro-fonts
 
 # Maybe a bit extra but there will never ever be tofu
+Requires: adobe-source-han-code-jp-fonts
 Requires: google-noto-color-emoji-fonts
 Requires: google-noto-emoji-fonts
 Requires: google-noto-fonts-common
