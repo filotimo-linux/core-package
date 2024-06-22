@@ -92,6 +92,5 @@ install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.fi
 %config(noreplace) %{_sysconfdir}/sddm.conf.d/10-filotimo-kde-overrides.conf
 # plasma-lookandfeel-fedora
 %{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop
-%{_kf6_datadir}/plasma/look-and-feel/org.fedoraproject.fedora.desktop
 
 %changelog
