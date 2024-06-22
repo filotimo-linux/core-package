@@ -940,7 +940,7 @@ diff -u b/dnfdragora/ui.py b/dnfdragora/ui.py
              setup main dialog
          '''
 -        yui.YUI.app().setApplicationTitle(_("Software Management - dnfdragora"))
-+        yui.YUI.app().setApplicationTitle(_("Software Management - Install & Remove Software"))
++        yui.YUI.app().setApplicationTitle(_("Software Management - dnfdragora"))
  
 -        self.icon = self.images_path + "dnfdragora.png"
 -        self.logo = self.images_path + "dnfdragora-logo.png"
