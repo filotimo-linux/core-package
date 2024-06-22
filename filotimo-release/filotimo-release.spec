@@ -45,7 +45,7 @@ Version:        40
 # with r starting at 1, and then just <r>, with r starting again at 1.
 # Use '%%autorelease -p' before final, and then drop the '-p'.
 #Release:        %autorelease
-Release:        6%{?dist}
+Release:        7%{?dist}
 License:        MIT
 URL:            https://github.com/filotimo-linux
 
@@ -370,7 +370,7 @@ PLATFORM_ID="platform:f%{dist_version}"
 PRETTY_NAME="Filotimo Linux %{dist_version} (%{release_name}%{?prerelease})"
 ANSI_COLOR="0;38;2;60;110;180"
 LOGO=fedora-logo-icon
-CPE_NAME="cpe:/o:filotimoproject:filotimo:%{dist_version}"
+CPE_NAME="cpe:/o:fedoraproject:fedora:%{dist_version}"
 DEFAULT_HOSTNAME="filotimo"
 HOME_URL="%{dist_home_url}"
 DOCUMENTATION_URL="https://github.com/filotimo-linux/"
