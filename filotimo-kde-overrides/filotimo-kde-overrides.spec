@@ -1,6 +1,6 @@
 Name:           filotimo-kde-overrides
-Version:        1.6
-Release:        2%{?dist}
+Version:        1.7
+Release:        1%{?dist}
 Summary:        KDE defaults for Filotimo
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
 
@@ -22,6 +22,9 @@ Source21:       10-filotimo-kde-overrides.conf
 # look-and-feel
 Source31:       metadata.json
 Source32:       defaults
+Source33:       org.kde.plasma.kicker.js
+Source34:       org.kde.plasma.kickerdash.js
+Source35:       org.kde.plasma.kickoff.js
 
 BuildArch:      noarch
 License:        GPLv2+
@@ -68,10 +71,10 @@ install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.fi
 rm -f %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/defaults
 install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/ %{SOURCE32}
 
-mkdir -p %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.fedoraproject.fedora.desktop/
+mkdir -p %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/plasmoidsetupscripts/
+install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/plasmoidsetupscripts/ %{SOURCE33} %{SOURCE34} %{SOURCE35}
 
 %post
-ln -sf %{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/ %{_kf6_datadir}/plasma/look-and-feel/org.fedoraproject.fedora.desktop/
 
 %files
 %license LICENSE
