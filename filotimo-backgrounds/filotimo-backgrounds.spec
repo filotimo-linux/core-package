@@ -1,6 +1,6 @@
 Name:           filotimo-backgrounds
 Version:        0.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Wallpapers for Filotimo
 License:        GPLv2+
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
@@ -43,7 +43,7 @@ Wallpapers for Filotimo.
 %install
 install -pm 0644 %{SOURCE0} LICENSE
 
-cd %{_topdir}
+cd %{_sourcedir}
 
 sed -i 's/"@author_name@"/"Marek Piwnicki"/' metadata.json
 sed -i 's/"@author_email@"/"marpiwnicki@gmail.com"/' metadata.json
