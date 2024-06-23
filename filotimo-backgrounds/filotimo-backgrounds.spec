@@ -1,5 +1,5 @@
 Name:           filotimo-backgrounds
-Version:        0.4
+Version:        0.5
 Release:        1%{?dist}
 Summary:        Wallpapers for Filotimo
 License:        GPLv2+
@@ -101,8 +101,9 @@ for file in $(ls | grep .jpg); do
 done
 
 mkdir -p %{buildroot}%{_datadir}/backgrounds/images
-convert InClouds.jpg InClouds.png
-cp InClouds.png %{buildroot}%{_datadir}/backgrounds/default.png
+cp InClouds.jpg %{buildroot}%{_datadir}/backgrounds/default.jpg
+convert %{buildroot}%{_datadir}/backgrounds/default.jpg %{buildroot}%{_datadir}/backgrounds/default.png
+rm -f %{buildroot}%{_datadir}/backgrounds/default.jpg
 cp %{buildroot}%{_datadir}/backgrounds/default.png %{buildroot}%{_datadir}/backgrounds/default-dark.png
 cp %{buildroot}%{_datadir}/backgrounds/default.png %{buildroot}%{_datadir}/backgrounds/images/default.png
 
