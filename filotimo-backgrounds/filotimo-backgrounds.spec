@@ -1,5 +1,5 @@
 Name:           filotimo-backgrounds
-Version:        0.3
+Version:        0.4
 Release:        1%{?dist}
 Summary:        Wallpapers for Filotimo
 License:        GPLv2+
@@ -27,6 +27,8 @@ BuildRequires: ImageMagick
 BuildRequires: zopfli
 Requires:      filotimo-kde-overrides
 
+Provides:      desktop-backgrounds-compat
+Obsoletes:     desktop-backgrounds-compat
 
 %description
 Wallpapers for Filotimo.
@@ -98,9 +100,19 @@ for file in $(ls | grep .jpg); do
     sed -i 's/"@author_email@"/\"'"$author_email"'\"/' %{buildroot}%{_datadir}/wallpapers/$id/metadata.json
 done
 
+cp InClouds.jpg %{buildroot}%{_datadir}/backgrounds/default.png
+mkdir -p %{buildroot}%{_datadir}/backgrounds/images
+
+%post
+cp %{_datadir}/backgrounds/default.png %{_datadir}/backgrounds/default-dark.png
+cp %{_datadir}/backgrounds/default.png %{_datadir}/backgrounds/images/default.png
 
 %files
 %license LICENSE
 %{_datadir}/wallpapers/*
+%{_datadir}/backgrounds/default.png
+%{_datadir}/backgrounds/default-dark.png
+%dir %{_datadir}/backgrounds/images/
+%{_datadir}/backgrounds/images/default*
 
 %changelog
