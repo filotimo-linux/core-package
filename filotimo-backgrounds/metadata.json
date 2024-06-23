@@ -2,8 +2,8 @@
     "KPlugin": {
         "Authors": [
             {
-                "Email": "marpiwnicki@gmail.com",
-                "Name": "Marek Piwnicki"
+                "Email": "@author_email@",
+                "Name": "@author_name@"
             }
         ],
         "Id": "@id@",

@@ -42,9 +42,6 @@ install -pm 0644 %{SOURCE0} LICENSE
 
 cd %{_sourcedir}
 
-author_name="Marek Piwnicki"
-author_email="marpiwnicki@gmail.com"
-
 for file in $(ls | grep .jpg); do
     id=$(echo $file | cut -d '.' -f 1)
 
@@ -57,20 +54,43 @@ for file in $(ls | grep .jpg); do
     sed -i 's/"@id@"/\"'"$id"'\"/' %{buildroot}%{_datadir}/wallpapers/$id/metadata.json
 
     name=""
+    author_name=""
+    author_email=""
     case "$id" in
-        "ColdDunes") name="Cold Dunes"
+        "ColdDunes")
+        name="Cold Dunes"
+        author_name="Marek Piwnicki"
+        author_email="marpiwnicki@gmail.com"
         ;;
-        "HillsandMountains") name="Hills and Mountains"
+        "HillsandMountains")
+        name="Hills and Mountains"
+        author_name="Marek Piwnicki"
+        author_email="marpiwnicki@gmail.com"
         ;;
-        "InClouds") name="In Clouds"
+        "InClouds")
+        name="In Clouds"
+        author_name="Marek Piwnicki"
+        author_email="marpiwnicki@gmail.com"
         ;;
-        "RaGusela") name="Ra Gusela"; author_name="Eberhard Grossgasteiger"; author_email="info@narrateography.art"
+        "RaGusela")
+        name="Ra Gusela"
+        author_name="Eberhard Grossgasteiger"
+        author_email="info@narrateography.art"
         ;;
-        "PassoGiau") name="Passo Giau"; author_name="Eberhard Grossgasteiger"; author_email="info@narrateography.art"
+        "PassoGiau")
+        name="Passo Giau"
+        author_name="Eberhard Grossgasteiger"
+        author_email="info@narrateography.art"
         ;;
-        "CadinidiMisurina") name="Cadini di Misurina"; author_name="Eberhard Grossgasteiger"; author_email="info@narrateography.art"
+        "CadinidiMisurina")
+        name="Cadini di Misurina"
+        author_name="Eberhard Grossgasteiger"
+        author_email="info@narrateography.art"
         ;;
-        *) name=$id
+        *)
+        name=$id
+        author_name="Marek Piwnicki"
+        author_email="marpiwnicki@gmail.com"
         ;;
     esac
     sed -i 's/"@name@"/\"'"$name"'\"/' %{buildroot}%{_datadir}/wallpapers/$id/metadata.json
