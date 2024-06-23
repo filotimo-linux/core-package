@@ -30,9 +30,3 @@ if ( applet.readConfig("icon", "start-here-kde") == "start-here-kde" || applet.r
 
 applet.currentConfigGroup = ["General"]
 applet.writeConfig("favoritesDisplay", 1);
-
-// Set panel height - don't know how to do this outside of here
-const panel = panels()[0];
-panel.height = Math.round(gridUnit * 3);
-panel.floating = false;
-panel.type

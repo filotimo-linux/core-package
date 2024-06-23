@@ -23,6 +23,7 @@ Source21:       10-filotimo-kde-overrides.conf
 Source31:       metadata.json
 Source32:       defaults
 Source33:       org.kde.plasma.kickoff.js
+Source34:       org.kde.plasma.desktop-layout.js
 
 BuildArch:      noarch
 License:        GPLv2+
@@ -71,6 +72,9 @@ install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.fi
 
 mkdir -p %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/plasmoidsetupscripts/
 install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/plasmoidsetupscripts/ %{SOURCE33}
+
+mkdir -p %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/layouts
+install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/layouts/ %{SOURCE34}
 
 %post
 
