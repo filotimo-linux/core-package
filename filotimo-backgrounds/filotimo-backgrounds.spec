@@ -1,23 +1,35 @@
 Name:           filotimo-backgrounds
 Version:        0.2
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Wallpapers for Filotimo
 License:        GPLv2+
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
 
 Source0:        LICENSE
-Source1:        ColdDunes.jpg
-Source2:        Dunes.jpg
-Source3:        HillsandMountains.jpg
-Source4:        InClouds.jpg
-Source5:        Kiss.jpg
-Source6:        Obelisk.jpg
-Source7:        Sand.jpg
-Source8:        Sunrise.jpg
-Source9:        Wind.jpg
+Source1:        AVeryTallMountainWithABitOfSnowOnIt.jpg
+Source2:        CadinidiMisurina.jpg
+Source3:        Canyon.jpg
+Source4:        ColdDunes.jpg
+Source5:        Dunes.jpg
+Source6:        GardenoftheGods.jpg
+Source7:        GlacialHeight.jpg
+Source8:        HillsandMountains.jpg
+Source9:        InClouds.jpg
+Source10:       Kiss.jpg
+Source11:       Lake.jpg
+Source12:       Mesa.jpg
+Source13:       MountainPeak.jpg
+Source14:       Obelisk.jpg
+Source15:       PassoGiau.jpg
+Source16:       PastelSky.jpg
+Source17:       Peaks.jpg
+Source18:       RaGusela.jpg
+Source19:       Sand.jpg
+Source20:       WhiteandRed.jpg
+Source21:       Wind.jpg
 
-Source21:       COPYING
-Source22:       metadata.json
+Source22:       COPYING
+Source23:       metadata.json
 
 BuildArch:     noarch
 BuildRequires: ImageMagick
@@ -50,7 +62,7 @@ for file in $(ls | grep .jpg); do
     magick %{buildroot}%{_datadir}/wallpapers/$id/contents/images/$(identify -format "%wx%h\n" $file).jpg %{buildroot}%{_datadir}/wallpapers/$id/contents/images/$(identify -format "%wx%h\n" $file).png
     rm -f %{buildroot}%{_datadir}/wallpapers/$id/contents/images/$(identify -format "%wx%h\n" $file).jpg
     cp metadata.json %{buildroot}%{_datadir}/wallpapers/$id/
-    cp %{SOURCE21} %{buildroot}%{_datadir}/wallpapers/$id/
+    cp %{SOURCE22} %{buildroot}%{_datadir}/wallpapers/$id/
 
     sed -i 's/"@id@"/\"'"$id"'\"/' %{buildroot}%{_datadir}/wallpapers/$id/metadata.json
 
