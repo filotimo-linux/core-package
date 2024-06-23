@@ -1,5 +1,5 @@
 Name:           filotimo-kde-overrides
-Version:        1.7
+Version:        1.8
 Release:        1%{?dist}
 Summary:        KDE defaults for Filotimo
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
@@ -22,9 +22,7 @@ Source21:       10-filotimo-kde-overrides.conf
 # look-and-feel
 Source31:       metadata.json
 Source32:       defaults
-Source33:       org.kde.plasma.kicker.js
-Source34:       org.kde.plasma.kickerdash.js
-Source35:       org.kde.plasma.kickoff.js
+Source33:       org.kde.plasma.kickoff.js
 
 BuildArch:      noarch
 License:        GPLv2+
@@ -72,7 +70,7 @@ rm -f %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotim
 install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/ %{SOURCE32}
 
 mkdir -p %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/plasmoidsetupscripts/
-install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/plasmoidsetupscripts/ %{SOURCE33} %{SOURCE34} %{SOURCE35}
+install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop/contents/plasmoidsetupscripts/ %{SOURCE33}
 
 %post
 
