@@ -100,12 +100,14 @@ for file in $(ls | grep .jpg); do
     sed -i 's/"@author_email@"/\"'"$author_email"'\"/' %{buildroot}%{_datadir}/wallpapers/$id/metadata.json
 done
 
-cp InClouds.jpg %{buildroot}%{_datadir}/backgrounds/default.png
 mkdir -p %{buildroot}%{_datadir}/backgrounds/images
+convert InClouds.jpg InClouds.png
+cp InClouds.png %{buildroot}%{_datadir}/backgrounds/default.png
+cp %{buildroot}%{_datadir}/backgrounds/default.png %{buildroot}%{_datadir}/backgrounds/default-dark.png
+cp %{buildroot}%{_datadir}/backgrounds/default.png %{buildroot}%{_datadir}/backgrounds/images/default.png
 
 %post
-cp %{_datadir}/backgrounds/default.png %{_datadir}/backgrounds/default-dark.png
-cp %{_datadir}/backgrounds/default.png %{_datadir}/backgrounds/images/default.png
+
 
 %files
 %license LICENSE
