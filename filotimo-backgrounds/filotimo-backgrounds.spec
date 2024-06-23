@@ -106,9 +106,6 @@ cp InClouds.png %{buildroot}%{_datadir}/backgrounds/default.png
 cp %{buildroot}%{_datadir}/backgrounds/default.png %{buildroot}%{_datadir}/backgrounds/default-dark.png
 cp %{buildroot}%{_datadir}/backgrounds/default.png %{buildroot}%{_datadir}/backgrounds/images/default.png
 
-%post
-
-
 %files
 %license LICENSE
 %{_datadir}/wallpapers/*
