@@ -6,3 +6,4 @@ windowviewEnabled=false
 
 [Xwayland]
 XwaylandEavesdrops=Combinations
+XwaylandEavesdropsMouse=true
