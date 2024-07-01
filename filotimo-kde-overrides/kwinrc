@@ -3,3 +3,6 @@ blurEnabled=true
 contrastEnabled=true
 dimscreenEnabled=true
 windowviewEnabled=false
+
+[Xwayland]
+XwaylandEavesdrops=Combinations

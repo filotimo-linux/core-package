@@ -1,5 +1,5 @@
 Name:           filotimo-kde-overrides
-Version:        1.8
+Version:        1.9
 Release:        1%{?dist}
 Summary:        KDE defaults for Filotimo
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
