@@ -4,7 +4,7 @@
 Summary:        Filotimo package repositories
 Name:           filotimo-repos
 Version:        40
-Release:        3%{?eln:.eln%{eln}}
+Release:        4%{?eln:.eln%{eln}}
 License:        MIT
 URL:            https://github.com/filotimo-linux/
 
@@ -175,7 +175,7 @@ in a production environment.
 # Fix copr on filotimo
 install -d -m 755 $RPM_BUILD_ROOT%{_datadir}/dnf/plugins
 install -m 644 %{_sourcedir}/copr.vendor.conf $RPM_BUILD_ROOT%{_datadir}/dnf/plugins/
-sed -i "s/^releasever = RELEASE_VER$/releasever=${version}/" $RPM_BUILD_ROOT%{_datadir}/dnf/plugins/copr.vendor.conf || exit 1
+sed -i 's/"@releasever@"/\"'"${version}"'\"/' $RPM_BUILD_ROOT%{_datadir}/dnf/plugins/copr.vendor.conf || exit 1
 
 # Install the keys
 install -d -m 755 $RPM_BUILD_ROOT/etc/pki/rpm-gpg
