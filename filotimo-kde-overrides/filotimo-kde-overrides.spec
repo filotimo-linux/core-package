@@ -1,5 +1,5 @@
 Name:           filotimo-kde-overrides
-Version:        1.9
+Version:        1.10
 Release:        1%{?dist}
 Summary:        KDE defaults for Filotimo
 URL:            https://github.com/filotimo-linux/filotimo-core-packages
@@ -17,6 +17,7 @@ Source8:        kuriikwsfilterrc
 Source9:        kwinrc
 Source10:       kwriterc
 Source11:       spectaclerc
+Source12:       12-filotimo-kde-policy.rules
 # SDDM config files
 Source21:       10-filotimo-kde-overrides.conf
 # look-and-feel
@@ -54,9 +55,11 @@ install -pm 0644 %{SOURCE0} LICENSE
 
 mkdir -p %{buildroot}%{_sysconfdir}/xdg/
 mkdir -p %{buildroot}%{_sysconfdir}/sddm.conf.d/
+mkdir -p %{buildroot}%{_datadir}/polkit-1/rules.d
 
 install -t %{buildroot}%{_sysconfdir}/xdg/ %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} %{SOURCE6} %{SOURCE7} %{SOURCE8} %{SOURCE9} %{SOURCE10} %{SOURCE11}
 install -t %{buildroot}%{_sysconfdir}/sddm.conf.d/ %{SOURCE21}
+install -t %{buildroot}%{_datadir}/polkit-1/rules.d/ %{SOURCE12}
 
 # plasma-lookandfeel-fedora
 mkdir -p %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop
@@ -92,6 +95,7 @@ install -t %{buildroot}%{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.fi
 %config(noreplace) %{_sysconfdir}/xdg/kwriterc
 %config(noreplace) %{_sysconfdir}/xdg/spectaclerc
 %config(noreplace) %{_sysconfdir}/sddm.conf.d/10-filotimo-kde-overrides.conf
+%{_datadir}/polkit-1/rules.d/12-filotimo-kde-policy.rules
 # plasma-lookandfeel-fedora
 %{_kf6_datadir}/plasma/look-and-feel/org.filotimolinux.filotimo.desktop
 
